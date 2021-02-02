@@ -1,0 +1,38 @@
+<html>
+
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<body>
+    <hr>
+<h1 align="center">Enter Login Details</h1><br><br>
+<div class="col-sm-9">
+<form [formGroup]="loginform" (ngSubmit)="submit()" style="margin-left:350px;">
+
+<div class="form-group">
+
+<label>Enter UserId</label><br>
+
+<input type="text" class="form-control" formControlName="name">
+
+</div>
+
+<div class="form-group">
+<label>Enter password</label>
+<input type="password" class="form-control" formControlName="password">
+
+</div>
+<a routerLink="/register">New User?</a> &nbsp;
+<a routerLink="/home" (click)="setuniqueid()" >Login as guest</a>
+<div class="form-group">
+<button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
+<p align="center">{{msg}}</p>
+</div>
+
+</body>
+
+
+
+
+
+</html>

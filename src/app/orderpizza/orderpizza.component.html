@@ -1,0 +1,28 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayout="wrap row" fxLayoutAlign="center">
+    <mat-card fxFlex="45%;" fxFlex.xs="80%" *ngFor="let p of pizzalist" style="margin-left:20px;margin-top: 20px;" >
+        <div fxLayout="row">
+            <div fxLayout="column" width="30%">
+                <h4 style="margin-top:-8px">{{p.name}}</h4>
+                <img src="assets\{{p.type}}.png" style="height:20px; width:20px;margin-top:-15px">
+                <div style="margin-bottom:120px;margin-top:60px">Rs. {{p.price}}</div>
+              </div>
+              <div fxLayout="column"style="margin-left:30px">
+                <p style="margin-top:-6px">{{p.description}}</p>
+                <div><strong>Ingredients:</strong>{{p.ingredients}}</div>
+                <div style="margin-top:16px"><strong>Toppings:</strong>{{p.topping}}</div>
+              </div>
+
+              <div fxLayout="column" style="margin-left:40px">
+                <img [src]=p.image style="height:120px;width:130px">
+                <a mat-raised-button color="accent" style="color:white;margin-top:28px" (click)="postpizza(p)">Add to cart</a>
+                
+              </div>
+          </div>
+    </mat-card>
+
+   
+
+    
+
+    
+</div>

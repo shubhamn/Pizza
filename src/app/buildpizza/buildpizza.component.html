@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> 
+  
+</head>
+<body>
+
+<div class="container">
+
+  <p align="center">Pizzenia now gives you options to build your own pizza,Customize your pizza by choosing the ingredients from the list given below</p>            
+  <table class="table table-bordered" align="center">
+    
+    <tbody>
+      <tr *ngFor="let i of ingredientlist">
+        <td><img [src]=i.image style="height:50px;width:80px"></td>
+        <td><strong>{{i.tname}}</strong><span style="margin-left:30px"><strong>Rs.{{i.price}}.00</strong></span></td>
+        <td><input type="checkbox" style="margin-right:20px" (change)="checkhvalue(i,$event)"><span style="color:chocolate">Add</span></td>
+      </tr>
+       <tr>
+           <td colspan="3" style="color:purple"><h3>Total Cost :{{totprice}}</h3></td>
+       </tr>
+       <tr>
+           <td colspan="3"><button type="submit" class="btn btn-primary" style="margin-left:240px" (click)="submitcart()">Build Ur Pizza</button></td>
+       </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

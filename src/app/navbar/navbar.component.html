@@ -1,0 +1,53 @@
+<mat-toolbar style="background-color: black;color:whitesmoke"><span>Pizzeria</span> 
+    <a mat-button routerLink='/home'><img src="assets\PizzeriaLogo.png" height="56"/></a>
+    <a mat-button routerLink='/order'>Order Pizza</a>
+    <a mat-button routerLink='/build'>Build Ur Pizza</a>
+     <!-- <a mat-button routerLink='/book'>{{totalcost}}</a>  -->
+  
+    <div style="margin-left:690px"></div>
+
+    <!-- <div (mouseenter) ="onHover(1)"  (mouseleave) ="onHover(-1)"> -->
+     <!-- <a mat-raised-button color="accent" style="color:white;"><mat-icon>add_shopping_cart</mat-icon>Shopping Cart</a>  -->
+     <!-- <a mat-button routerLink='/login'>Login</a> -->
+     <button mat-raised-button [matMenuTriggerFor]="beforeMenu" color="accent" style="color:white" (click)="getcart()"><mat-icon>add_shopping_cart</mat-icon>Shopping Cart</button>
+     <mat-menu #beforeMenu="matMenu" xPosition="before">
+         <table>
+
+                <tr>
+                        <th colspan="3" align="center">Cart Items</th>
+                       
+                      </tr>
+
+             <tr *ngFor="let c of cartlist">
+       <td><button mat-menu-item><img [src]=c.image style="height:40px;width:40px"></button></td>         
+       <td><button mat-menu-item>{{c.name}}</button></td>
+       <td><button mat-menu-item>{{c.price}}</button></td>
+       
+       </tr>
+
+
+       <tr>
+
+        <td colspan="3" align="center">Total cost: {{totalcost}}</td>
+
+       </tr>
+   
+</table>   
+    </mat-menu>
+
+            
+            
+      <!-- <table>
+      
+      <tr>
+        <th colspan="3" align="center">Cart Items</th>
+       
+      </tr>
+      
+        <tr *ngFor="let c of cartlist">
+        <td><img [src]=c.image style="height:50px;width:80px"></td>
+          <td><strong>{{c.name}}</strong></td>
+          <td>{{c.price}}</td>
+      </tr>
+    -->
+  

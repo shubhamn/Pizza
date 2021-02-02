@@ -1,0 +1,20 @@
+/* .spacer{
+     flex: 1 1 auto; 
+} */
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: block;
+    position: absolute;
+    min-width: 200px;
+    color:black;
+    width:20%;
+    right:40px;
+    opacity:0.8;
+    background-color: wheat;
+  }
